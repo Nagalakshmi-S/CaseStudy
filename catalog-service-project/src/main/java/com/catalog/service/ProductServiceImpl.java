@@ -16,13 +16,13 @@ public class ProductServiceImpl implements ProductCatalogService {
 	private ProductCatalogDao productCatalogDao;
 	@Override
 	public List<ProductCatalog> listAllProducts() {
-		return null;
+		return productCatalogDao.findAll();
 	}
 
 	@Override
 	public Optional<ProductCatalog> getProductByCode(String code) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		return productCatalogDao.findByCode(code);
 	}
 
 }
