@@ -22,7 +22,7 @@ public class ProductServiceImpl implements ProductCatalogService {
 	@Override
 	public Optional<ProductCatalog> getProductByCode(String code) {
 		// TODO Auto-generated method stub
-		return productCatalogDao.findByCode(code);
+		return productCatalogDao.findByProductCode(code);
 	}
 
 }

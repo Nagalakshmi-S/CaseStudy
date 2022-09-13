@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.catalog.bean.ProductCatalog;
 import com.catalog.service.ProductCatalogService;
+import com.catalog.service.ProductServiceImpl;
 
 @RestController
 public class ProductResource {
 
 	@Autowired
-	private ProductCatalogService catalogService;
+	private ProductServiceImpl catalogService;
 	
 	@GetMapping(path = "/products",produces = MediaType.APPLICATION_JSON_VALUE )
 	public List<ProductCatalog> listAllProducts(){
@@ -24,7 +25,7 @@ public class ProductResource {
 		
 	}
 	
-	@GetMapping(path = "/products /code /{productCode}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/products/code/{productCode}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Optional<ProductCatalog> getProductByCode(@PathVariable("productCode") String productCode){
 		return catalogService.getProductByCode(productCode);
 		

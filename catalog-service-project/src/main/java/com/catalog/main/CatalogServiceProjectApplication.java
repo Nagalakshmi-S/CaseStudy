@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.catalog")
 @EntityScan(basePackages = "com.catalog.bean")
 @EnableJpaRepositories(basePackages = "com.catalog.persistence")
 @EnableEurekaClient

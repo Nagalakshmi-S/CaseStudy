@@ -9,10 +9,10 @@ import org.springframework.stereotype.Repository;
 import com.catalog.bean.ProductCatalog;
 
 @Repository
-public interface ProductCatalogDao extends JpaRepository<ProductCatalog, Long> {
+public interface ProductCatalogDao extends JpaRepository<ProductCatalog, Integer> {
 	
 	
-	@Query(value="from productCatalog where code=:code")
-	Optional<ProductCatalog> findByCode(String code);
+	@Query(value="from ProductCatalog where code=:productCode")
+	Optional<ProductCatalog> findByProductCode(String productCode);
 
 }

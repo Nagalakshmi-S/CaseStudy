@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 public class ProductCatalogList {
 
 	private List<ProductCatalog> productCatalogList;

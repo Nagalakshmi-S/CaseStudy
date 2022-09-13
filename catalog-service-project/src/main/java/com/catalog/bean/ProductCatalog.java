@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class ProductCatalog {
 
 	@Id
-    private Long id; 
+    private int id; 
     private String code;
     private String name;
     private String description;
