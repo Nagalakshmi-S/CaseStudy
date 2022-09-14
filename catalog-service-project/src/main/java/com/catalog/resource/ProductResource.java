@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.catalog.bean.ProductCatalog;
+import com.catalog.bean.Product;
+import com.catalog.bean.ProductList;
 import com.catalog.service.ProductCatalogService;
 import com.catalog.service.ProductServiceImpl;
 
@@ -17,19 +18,16 @@ import com.catalog.service.ProductServiceImpl;
 public class ProductResource {
 
 	@Autowired
-	private ProductServiceImpl catalogService;
+	private ProductServiceImpl productService;
 	
-	@GetMapping(path = "/products",produces = MediaType.APPLICATION_JSON_VALUE )
-	public List<ProductCatalog> listAllProducts(){
-		return catalogService.listAllProducts();
-		
+	@GetMapping(path = "/products", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ProductList listAllProducts(){
+		return productService.listAllProducts();
 	}
 	
 	@GetMapping(path = "/products/code/{productCode}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Optional<ProductCatalog> getProductByCode(@PathVariable("productCode") String productCode){
-		return catalogService.getProductByCode(productCode);
-		
+	public Optional<Product> getProductByCode(@PathVariable("productCode") String productCode){
+		return productService.getProductByCode(productCode);
 	}
-
 
 }

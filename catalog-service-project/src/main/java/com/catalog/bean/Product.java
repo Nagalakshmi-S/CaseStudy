@@ -1,9 +1,7 @@
 package com.catalog.bean;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-
+import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +10,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductCatalogList {
+@Entity
+public class Product {
 
-	private List<ProductCatalog> productCatalogList;
+	@Id
+    private long id; 
+    private String code;
+    private String name;
+    private String description;
+    private double price;
+
 }

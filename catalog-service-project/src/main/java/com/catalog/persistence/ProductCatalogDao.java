@@ -1,18 +1,19 @@
 package com.catalog.persistence;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.catalog.bean.ProductCatalog;
+import com.catalog.bean.Product;
 
 @Repository
-public interface ProductCatalogDao extends JpaRepository<ProductCatalog, Integer> {
+public interface ProductCatalogDao extends JpaRepository<Product, Integer> {
 	
 	
-	@Query(value="from ProductCatalog where code=:productCode")
-	Optional<ProductCatalog> findByProductCode(String productCode);
+	
+	List<Product> findByCode(String productCode);
 
 }
