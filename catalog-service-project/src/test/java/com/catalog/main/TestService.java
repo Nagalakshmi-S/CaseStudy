@@ -24,7 +24,7 @@ import com.catalog.bean.ProductList;
 import com.catalog.persistence.ProductCatalogDao;
 import com.catalog.service.ProductServiceImpl;
 
-@SpringBootTest
+@SpringBootTest(classes=com.catalog.main.CatalogServiceProjectApplication.class)
 @RunWith(MockitoJUnitRunner.class)
 public class TestService {
 	
