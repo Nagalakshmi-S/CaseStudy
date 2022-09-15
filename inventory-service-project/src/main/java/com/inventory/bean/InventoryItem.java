@@ -15,7 +15,7 @@ public class InventoryItem {
 	@Id
     private Long id; 
     private String productCode;
-    private Integer availableQuantity ;
+    private int availableQuantity ;
 }
 
 

@@ -1,12 +1,13 @@
 create database CaseStudy;
 use CaseStudy;
-create table if not exists ProductCatalog(
-id int primary key,
-code varchar(255),
-name varchar(255),
-description varchar(255),
-price double);
+
 drop table ProductCatalog;
-insert ignore into Product values(1,"P001","Product1","This is 1st product",778);
-select * from productcatalog;
-truncate productcatalog;
+insert ignore into Product values(2,"P002","Product2","This is 2nd product",990),(3,"P003","Product3","This is 3rd product",974),(4,"P004","Product4","This is 4th product",596);
+select * from product;
+truncate inventoryitem;
+
+select * from inventoryitem;
+
+drop table inventoryitem;
+insert into inventoryItem values(103,674,"P003"),(104,259,"P004");
+

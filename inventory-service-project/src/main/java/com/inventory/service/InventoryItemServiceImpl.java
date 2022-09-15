@@ -19,8 +19,15 @@ public class InventoryItemServiceImpl implements InventoryItemService {
 
 	@Override
 	public InventoryItem updateQuantityByProductCode(String code, int availableQuantity) {
-		if(inventoryItemDao.updateByQuantity(code,availableQuantity)>0)
-			return getInventoryItemByProductCode(code);
+		InventoryItem item=getInventoryItemByProductCode(code);
+		if(availableQuantity>0) {
+	    //Integer avail=Integer.valueOf(availableQuantity);
+		if(item!=null) {
+			availableQuantity+=item.getAvailableQuantity();
+			if(inventoryItemDao.updateByQuantity(code,availableQuantity)>0)
+				return getInventoryItemByProductCode(code);
+		}
+		}
 		return new InventoryItem();
 	}
 
