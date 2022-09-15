@@ -23,7 +23,7 @@ public class TestDao {
 		@Test
 		public void findByCode_T01() {
 			Product product=new Product(1,"P001","Product1","This is 1st product",778);
-			assertIterableEquals(Arrays.asList(product), dao.findByCode("P001"));
+			assertEquals(Arrays.asList(product), dao.findByCode("P001"));
 		}
 		
 		@Test

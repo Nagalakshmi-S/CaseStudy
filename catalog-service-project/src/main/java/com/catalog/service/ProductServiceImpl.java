@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductCatalogService {
 		if(prod.isEmpty()) {
 			return Optional.empty();
 		}
-		return Optional.ofNullable(prod.get(0));
+		return Optional.of(prod.get(0));
 	}
 
 }

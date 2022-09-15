@@ -27,7 +27,9 @@ public class InventoryResource {
 	
 	@PutMapping(path = "/code/{productCode}/{availableQuantity}",produces = MediaType.APPLICATION_JSON_VALUE)
 	public InventoryItem updateInventoryItemQuantityByProductCode(@PathVariable("productCode") String productCode,@PathVariable("availableQuantity")  int availableQuantity) {
-		InventoryItem item=inventoryItemServiceImpl.updateQuantityByProductCode(productCode, availableQuantity);
-		return item;
+		boolean item=inventoryItemServiceImpl.updateQuantityByProductCode(productCode, availableQuantity);
+		if(item)
+			return inventoryItemServiceImpl.getInventoryItemByProductCode(productCode);
+		return new InventoryItem();
 	}
 }
